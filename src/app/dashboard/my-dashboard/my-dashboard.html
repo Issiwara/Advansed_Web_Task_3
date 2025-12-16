@@ -1,0 +1,32 @@
+<div class="dashboard-container">
+  <h2>Welcome to My Dashboard</h2>
+  <p>This is a placeholder dashboard component. You can customize this further.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">{{ dashboardStats.activeUsers }}</div>
+      <div class="stat-label">Active Users</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">7</div>
+      <div class="stat-label">New Messages</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ dashboardStats.projects }}</div>
+      <div class="stat-label">Projects</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">{{ (dashboardStats.activeUsers ? (dashboardStats.projects / dashboardStats.activeUsers) : 0) | number:'1.1-2' }}</div>
+      <div class="stat-label">Avg Projects per User</div>
+    </div>
+  </div>
+
+  <!-- Embedded child component that uses typed properties and performs calculations -->
+  <app-user-stats [stats]="dashboardStats"></app-user-stats>
+
+  <div class="dashboard-footer">
+    <button class="action-btn" (click)="increaseProjects()">Add Project</button>
+    <button class="action-btn secondary">View Details</button>
+  </div>
+</div>
+  

@@ -1,0 +1,10 @@
+<div class="user-stats-card">
+  <h3>User Statistics</h3>
+  <p>Active users: <strong>{{ stats.activeUsers }}</strong></p>
+  <p>New messages today: <strong>{{ stats.newMessages }}</strong></p>
+  <p>Total projects: <strong>{{ stats.projects }}</strong></p>
+
+  <p class="summary">Average projects per user: <strong>{{ projectsPerUser | number:'1.2-2' }}</strong></p>
+
+  <p class="description">{{ summary }}</p>
+</div>

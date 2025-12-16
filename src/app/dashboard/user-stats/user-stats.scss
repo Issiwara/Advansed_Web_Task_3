@@ -1,0 +1,21 @@
+.user-stats-card {
+  padding: 0.75rem;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+.user-stats-card h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.summary {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+
+.description {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.65);
+}
