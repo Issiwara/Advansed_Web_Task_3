@@ -23,3 +23,20 @@ jobs:
 
       - name: Docker Push
         run: docker push ${{ secrets.DOCKER_USERNAME }}/advansed_web_task_3
+
+
+
+      - name: SSH into EC2 instance
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          port: ${{ secrets.EC2_PORT }}
+          script: |
+            sudo docker pull ${{ secrets.DOCKER_USERNAME }}/advansed_web_task_3
+            sudo docker stop web_task
+            sudo docker rm web_task
+
+            sudo docker run -d -p 8000:8000 --name web_task ${{ secrets.DOCKER_USERNAME }}/advansed_web_task_3
+            
