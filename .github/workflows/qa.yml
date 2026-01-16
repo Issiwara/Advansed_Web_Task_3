@@ -38,5 +38,5 @@ jobs:
             sudo docker stop web_task
             sudo docker rm web_task
 
-            sudo docker run -d -p 8000:8000 --name web_task ${{ secrets.DOCKER_USERNAME }}/advansed_web_task_3
+            sudo docker run -d -p 8000:4000 --name web_task ${{ secrets.DOCKER_USERNAME }}/advansed_web_task_3
             
